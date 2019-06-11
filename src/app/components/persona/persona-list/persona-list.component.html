@@ -1,0 +1,45 @@
+<div class="container">
+    <br>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">e-mail</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personas; let i = index">
+
+                <td>{{persona.name}}</td>
+                <td>{{persona.lastName}}</td>
+                <td>{{persona.age}}</td>
+                <td>{{persona.email}}</td>
+                <td>{{addresses[i]}}</td>
+
+                <button type="button" 
+                class="btn btn-warning"
+                (click)="editPerson(id.value)"
+                >
+                    Edit
+                    <input hidden type="text" #id value="{{persona.id}}">
+                    <td hidden></td>
+                </button>
+
+                
+                <button type="button" 
+                class="btn btn-warning"
+                (click)="editPerson(id.value)"
+                >
+                    Edit
+                    
+                    <input hidden type="text" #id value="{{persona.id}}">
+                    <td hidden></td>
+                </button>
+            </tr>
+        </tbody>
+    </table>
+</div>
