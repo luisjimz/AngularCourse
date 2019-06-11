@@ -3,6 +3,7 @@ import { PersonaService } from '../service/persona.service';
 import { AddressService } from '../service/address.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Router } from '@angular/router';
+import { Persona } from '../entities/persona';
 
 @Component({
   selector: 'app-persona-list',
@@ -11,8 +12,8 @@ import { Router } from '@angular/router';
 })
 export class PersonaListComponent implements OnInit {
 
-
-  
+  personas : Persona[];
+  addresses : string[]; 
 
   constructor(
     private personaService : PersonaService,
@@ -21,8 +22,8 @@ export class PersonaListComponent implements OnInit {
     ) { }
 
   ngOnInit() {    
-    var personas = this.personaService.getPersons();
-    var addresses = this.addressService.getAdressesToString();
+    this.personas = this.personaService.getPersons();
+    this.addresses = this.addressService.getAdressesToString();
   }
 
   editPerson(foo:any) : void{
