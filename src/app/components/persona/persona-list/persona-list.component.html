@@ -3,12 +3,7 @@
     <table class="table table-hover table-dark">
         <thead>
             <tr>
-
-                <th scope="col">Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">e-mail</th>
-                <th scope="col">Address</th>
+                <th scope="col" *ngFor="let element of HEADER_TABLE; let i = index" >{{HEADER_TABLE[i] | titlecase}}</th>                    
             </tr>
         </thead>
         <tbody>
@@ -20,25 +15,14 @@
                 <td>{{persona.email}}</td>
                 <td>{{addresses[i]}}</td>
 
-                <button type="button" 
-                class="btn btn-warning"
-                (click)="editPerson(id.value)"
-                >
+                <button type="button" class="btn btn-warning" (click)="editPerson(id.value)">
                     Edit
                     <input hidden type="text" #id value="{{persona.id}}">
                     <td hidden></td>
                 </button>
 
-                
-                <button type="button" 
-                class="btn btn-warning"
-                (click)="editPerson(id.value)"
-                >
-                    Edit
-                    
-                    <input hidden type="text" #id value="{{persona.id}}">
-                    <td hidden></td>
-                </button>
+
+
             </tr>
         </tbody>
     </table>

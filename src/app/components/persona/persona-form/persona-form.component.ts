@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { PersonaFormService } from '../service/persona-form.service';
 
+
 @Component({
   selector: 'app-persona-form',
   templateUrl: './persona-form.component.html',
@@ -30,6 +31,7 @@ export class PersonaFormComponent implements OnInit {
 
   onSubmit() : void{   
     this.personaFormService.saveForm(this.personaForm);
+    this.personaForm.reset();
   }
 
   editPerson() : void{

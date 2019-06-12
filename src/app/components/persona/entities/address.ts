@@ -9,10 +9,10 @@ interface IAddress extends IDatabaseObject{
 
 export class Address implements IAddress{
     id: number;
-    street: string;    
-    city: string;
-    state: string;
-    zip: number;
+    street: string = '';    
+    city: string = '';
+    state: string = '';
+    zip: number = 0;
 
 
 }

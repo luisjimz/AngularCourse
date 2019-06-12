@@ -9,9 +9,9 @@ interface IPersona extends IDatabaseObject{
 
 export class Persona implements IPersona{
     id: number;
-    name: string;    
-    lastName: string;
-    age: number;
-    email: string;
+    name: string = '';    
+    lastName: string = '';
+    age: number = 0;
+    email: string = '';    
     
 }

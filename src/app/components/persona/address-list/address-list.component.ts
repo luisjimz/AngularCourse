@@ -9,13 +9,17 @@ import { Address } from '../entities/address';
 })
 export class AddressListComponent implements OnInit {
 
+  HEADER_TABLE: string[] = []
   
-  addresses : Address[] = this.addresService.getAddresses();
+  addresses : Address[];
 
   constructor(private addresService : AddressService) { }
 
   ngOnInit() {
-    
+    this.addresses = this.addresService.getAddresses();
+    if(this.addresses != undefined){
+      this.HEADER_TABLE = this.addresService.getTableHeader();
+    }
   }
 
 }

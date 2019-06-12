@@ -18,6 +18,11 @@
     <div class="form-group">
       <input type="text" class="form-control" formControlName="email" placeholder="Email">
     </div>
+
+    <div class="form-group">
+      <input type="text" bdDatepicker class="form-control" placeholder="Date of birth">
+    </div>
+
     <hr>
     <div class="container">
       <div formGroupName="address">
@@ -45,3 +50,12 @@
   </form>
 
 </div>
+
+<!-- 
+<div mat-dialog-content>
+  {{message}}
+ </div>
+ <div mat-dialog-actions>
+   <button mat-button (click)="onNoClick()">No</button>
+   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Yes</button>
+ </div> -->

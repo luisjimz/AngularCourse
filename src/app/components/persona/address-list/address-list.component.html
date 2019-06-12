@@ -3,11 +3,7 @@
     <table class="table table-hover table-dark">
         <thead>
             <tr>
-
-                <th scope="col">Street</th>
-                <th scope="col">City</th>
-                <th scope="col">State</th>
-                <th scope="col">Zip</th>                
+                <th scope="col" *ngFor="let element of HEADER_TABLE; let i = index">{{HEADER_TABLE[i] | titlecase}}</th>
             </tr>
         </thead>
         <tbody>
@@ -15,7 +11,7 @@
                 <td>{{adress.street}}</td>
                 <td>{{adress.city}}</td>
                 <td>{{adress.state}}</td>
-                <td>{{adress.zip}}</td>                
+                <td>{{adress.zip}}</td>
             </tr>
         </tbody>
     </table>

@@ -22,6 +22,10 @@ export class PersonaService {
     name: "Octavio"
   }];
 
+  extraHeader: string[] = [
+    "address"
+  ]
+
   savePerson(persona: FormGroup) {
     var temp = new Persona();
     temp.id = this.setId();
@@ -35,6 +39,13 @@ export class PersonaService {
 
   getPersons(): Persona[] {
     return this.personaList;
+  }
+
+  getTableHeader() : string[]{
+    let foo = new Persona();
+    let headers = Object.getOwnPropertyNames(foo);
+    headers.push(this.extraHeader[0]);
+    return headers;
   }
 
   setId(): number {

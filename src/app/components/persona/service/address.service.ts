@@ -37,6 +37,12 @@ export class AddressService {
     return this.addressList;
   }
 
+  getTableHeader() : string[]{
+    let foo = new Address();
+    let headers = Object.getOwnPropertyNames(foo);
+    return headers;
+  }
+
   getAdressesToString(): string[]{
     var addresses : string[] = [];
     for(var i = 0; i < this.addressList.length; i++ ){
