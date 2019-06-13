@@ -13,6 +13,8 @@
                 <td>{{persona.lastName}}</td>
                 <td>{{persona.age}}</td>
                 <td>{{persona.email}}</td>
+                <td>{{persona.birthDate | date}}</td>
+                <td>{{persona.creationDate | date}}</td>
                 <td>{{addresses[i]}}</td>
 
                 <button type="button" class="btn btn-warning" (click)="editPerson(id.value)">
@@ -20,9 +22,6 @@
                     <input hidden type="text" #id value="{{persona.id}}">
                     <td hidden></td>
                 </button>
-
-
-
             </tr>
         </tbody>
     </table>

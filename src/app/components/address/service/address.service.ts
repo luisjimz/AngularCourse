@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Address } from '../entities/address';
+import { Address } from '../../shared/entities/address';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class AddressService {
     zip: 50102
   }, 
   {
-    id: 1,
+    id: 2,
     street: "Avenida Francisco Sosa #48",
     city: "Mexico City",    
     state: "Mexico",
@@ -35,6 +35,15 @@ export class AddressService {
 
   getAddresses(): Address[]{
     return this.addressList;
+  }
+
+  findAddress(id): Address{
+    console.log(id);
+    for(var i = 0; i < this.addressList.length; i++){
+      if(this.addressList[i].id == id){
+        return this.addressList[i];
+      }
+    }
   }
 
   getTableHeader() : string[]{

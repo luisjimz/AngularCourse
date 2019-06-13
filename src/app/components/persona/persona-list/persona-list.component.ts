@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from '../service/persona.service';
-import { AddressService } from '../service/address.service';
 import { Router } from '@angular/router';
-import { Persona } from '../entities/persona';
+import { Persona } from '../../shared/entities/persona';
+import { AddressService } from '../../address/service/address.service';
 
 @Component({
   selector: 'app-persona-list',
@@ -11,17 +11,10 @@ import { Persona } from '../entities/persona';
 })
 export class PersonaListComponent implements OnInit {
 
-  HEADER_TABLE: string[] = [
-    // "Name",
-    //  "Last Name",
-    //  "Age",
-    //  "e-mail",
-    //  "Address"
-  ]
-
+  HEADER_TABLE: string[];
+  PROPERTY: string[];
   personas : Persona[];
   addresses : string[]; 
-
 
   constructor(
     private personaService : PersonaService,
@@ -30,14 +23,13 @@ export class PersonaListComponent implements OnInit {
     ) { }
 
   ngOnInit() {      
-    this.HEADER_TABLE = this.personaService.getTableHeader();
-    this.personas = this.personaService.getPersons();
-    this.addresses = this.addressService.getAdressesToString();
-
+    this.HEADER_TABLE = this.personaService.getTableHeader();  
+    this.personas = this.personaService.getPersons();    
+    this.addresses = this.addressService.getAdressesToString();  
   }
 
   editPerson(foo:any) : void{
     console.log(foo);
-    this.router.navigate(['/edit/:'+foo]);
+    this.router.navigate(['/edit/'+foo]);
   }
 }

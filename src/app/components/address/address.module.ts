@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddressListComponent } from 'src/app/components/persona/address-list/address-list.component';
+import { AddressListComponent } from './address-list/address-list.component';
+
 
 
 @NgModule({

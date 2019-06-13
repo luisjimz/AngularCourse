@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from '../../shared/entities/address';
 import { AddressService } from '../service/address.service';
-import { Address } from '../entities/address';
+
 
 @Component({
   selector: 'app-address-list',
@@ -19,7 +20,6 @@ export class AddressListComponent implements OnInit {
     this.addresses = this.addresService.getAddresses();
     if(this.addresses != undefined){
       this.HEADER_TABLE = this.addresService.getTableHeader();
-    }
+    }    
   }
-
 }

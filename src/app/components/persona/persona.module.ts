@@ -10,13 +10,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { PersonaFormMaterialComponent } from './persona-form-material/persona-form-material.component';
+import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatIconModule } from '@angular/material';
 
 
 @NgModule({
   declarations: [
     PersonaFormComponent,
-    PersonaListComponent
+    PersonaListComponent,
+    PersonaFormMaterialComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -24,12 +27,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    BsDatepickerModule
+    BsDatepickerModule.forRoot(),
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule, 
+    MatNativeDateModule,
+    MatIconModule
     
   ],
   exports: [
     PersonaFormComponent,
-    PersonaListComponent
+    PersonaListComponent,
+    PersonaFormMaterialComponent
   ]
 })
 export class PersonaModule { }

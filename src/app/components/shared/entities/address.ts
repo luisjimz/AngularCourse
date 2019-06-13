@@ -1,4 +1,5 @@
-import { IDatabaseObject } from 'src/app/components/shared/entitie/IDatabaseObject';
+import { IDatabaseObject } from './IDatabaseObject';
+
 
 interface IAddress extends IDatabaseObject{
     street : string,
@@ -13,6 +14,4 @@ export class Address implements IAddress{
     city: string = '';
     state: string = '';
     zip: number = 0;
-
-
 }

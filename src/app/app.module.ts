@@ -6,11 +6,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { PersonaModule } from './modules/persona.module';
-import { SharedModule } from './modules/shared.module';
-import { HomeModule } from './modules/home.module';
+import { PersonaModule } from './components/persona/persona.module';
+import { SharedModule } from './components/shared/shared.module';
+import { HomeModule } from './components/home/home.module';
 import { APP_ROUTING } from './app.routes';
-import { AddressModule } from './modules/address.module';
+import { AddressModule } from './components/address/address.module';
 
 
 
